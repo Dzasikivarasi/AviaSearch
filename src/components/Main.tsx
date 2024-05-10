@@ -3,7 +3,6 @@ import useMediaQuery from "../hooks/useMediaQuery.ts"
 import FiltersDesktop from "./Filters-desktop.tsx";
 import FiltersMobile from "./Filters-mobile.tsx";
 import Sorting from "./Sorting.tsx";
-import { TICKETS } from "../data.js";
 import Ticket from "./Ticket.tsx";
 import LoadButton from "./Load-button.tsx";
 import { EMPTY_MESSAGE, TICKETS_PER_CLICK } from "../const.js";
@@ -16,6 +15,7 @@ export default function Main(): JSX.Element {
     const [visibleTickets, setVisibleTickets] = useState<number>(3);
     const [selectedTransfers, setSelectedTransfers] = useState<string[]>([]);
     const [selectedCompanies, setSelectedCompanies] = useState<string[]>([]);
+    const mockTickets = useSelector((state: RootState) => state.tickets.mockTickets);
     const sortedTickets = useSelector((state: RootState) => state.tickets.sortedTickets);
     const activeSort = useSelector((state: RootState) => state.tickets.activeSort);
     const dispatch = useDispatch();
@@ -24,7 +24,7 @@ export default function Main(): JSX.Element {
         setVisibleTickets(prevVisibleTickets => prevVisibleTickets + TICKETS_PER_CLICK);
     }
 
-    const isAllTicketsDisplayed = visibleTickets >= TICKETS.length;
+    const isAllTicketsDisplayed = visibleTickets >= mockTickets.length;
 
     useEffect(() => {
         dispatch(applyFilters({ selectedTransfers, selectedCompanies }));
