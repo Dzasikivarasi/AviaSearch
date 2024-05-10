@@ -120,8 +120,4 @@ const COMPANIES = [
         logo: '/img/red-wings.svg'
     }];
 
-const FILTERS_TRANSFERS = ['Без пересадок', '1 пересадка', '2 пересадки', '3 пересадки'];
-const SORTING = ['Самый дешевый', 'Самый быстрый', 'Самый оптимальный'];
-const TICKETS_PER_CLICK = 3;
-
-export { TICKETS, COMPANIES, FILTERS_TRANSFERS, SORTING, TICKETS_PER_CLICK };
+export { TICKETS, COMPANIES };

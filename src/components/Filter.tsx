@@ -20,7 +20,6 @@ export default function Filter({ name, className, data, onChange, selected }: Fi
     };
 
     useEffect(() => {
-        console.log("Selected:", selected);
     }, [selected]);
 
     return (

@@ -28,7 +28,7 @@ export default function Ticket({ item }: TicketProps): JSX.Element {
                 </li>
                 <li key={item.connectionAmount} className="tickets__result-list-item-data">
                     <p className="tickets__result-list-item-data-title">Пересадки</p>
-                    <p className="tickets__result-list-item-data-description">{formatTransferCount(item.connectionAmount,'пересад')}</p>
+                    <p className="tickets__result-list-item-data-description">{formatTransferCount(item.connectionAmount, 'пересад')}</p>
                 </li>
             </ul>
         </li>
