@@ -20,7 +20,7 @@ export default function Main(): JSX.Element {
     const activeSort = useSelector((state: RootState) => state.tickets.activeSort);
     const dispatch = useDispatch();
 
-    const onButtonClick = () => {
+    const onButtonClick = (): void => {
         setVisibleTickets(prevVisibleTickets => prevVisibleTickets + TICKETS_PER_CLICK);
     }
 
